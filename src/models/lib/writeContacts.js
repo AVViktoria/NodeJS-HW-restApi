@@ -2,7 +2,7 @@ const fs = require('fs/promises');
 const contactsPath = require('./contactsPath');
 
 //   Functions  writeFile
-const writeContacts = async (user) => { 
+async function  writeContacts (user) { 
   return await fs.writeFile(contactsPath, JSON.stringify(user));
 };
 
