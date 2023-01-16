@@ -1,5 +1,5 @@
-const getContactsList = require('../lib/getContactsList');
-const writeContacts = require('../lib/writeContacts');
+const getContactsList = require('./getContactsList');
+const writeContacts = require('./writeContacts');
 const { randomUUID } = require("crypto");
 
 
