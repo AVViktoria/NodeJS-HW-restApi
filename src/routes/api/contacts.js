@@ -16,14 +16,14 @@ const {
   getById,
   addById,
   deleteById,
-//   updateById,
+  updateById,
 } = require("../../controllers/index");
 
 router.get('/', getAll);
 router.get('/:contactId', getById);
 router.post('/', addById);
 router.delete('/:contactId', deleteById);
-// router.put('/:contactId', updateById);
+router.put('/:contactId', updateById);
 // router.get('/', async (req, res, next) => {
 //   res.json({ message: 'Get Hello World!' })
 // })
@@ -40,8 +40,8 @@ router.delete('/:contactId', deleteById);
 //   res.json({ message: 'Delete Hello World!' })
 // })
 
-router.put('/:contactId', async (req, res, next) => {
-  res.json({ message: 'Put Hello World!' })
-})
+// router.put('/:contactId', async (req, res, next) => {
+//   res.json({ message: 'Put Hello World!' })
+// })
 
-module.exports = router
+module.exports = router;
