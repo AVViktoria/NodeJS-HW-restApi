@@ -3,7 +3,7 @@ const logger = require('morgan');
 const cors = require('cors');
 
 //   import router from contacts.js
-const contactsRouter = require('./routes/api/contacts');
+const contactsRouter = require('./routes/index');
 
 const app = express();
 
