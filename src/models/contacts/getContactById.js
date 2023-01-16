@@ -14,4 +14,4 @@ const getContactById = async (contactId) => {
   }
 };
 
-module.exports = getContactById();
+module.exports = getContactById;

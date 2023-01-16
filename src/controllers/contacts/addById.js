@@ -3,10 +3,9 @@ const router = express.Router()
 const {addContact} = require('../../models/contacts/addContact');
 
 
-const addById = router.get('/', async (req, res, next) => {
+const addById = router.post('/', async (req, res, next) => {
 
-    const {body} = req.body;
-    const data = await addContact(body);
+    const data = await addContact(req.body);
     res.status(200).json({
       status: "success",
       code: 200,
@@ -14,4 +13,4 @@ const addById = router.get('/', async (req, res, next) => {
     });
   });
 
-module.exports = addById();
+module.exports = addById;

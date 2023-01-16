@@ -1,12 +1,12 @@
 const getContactsList = require('../lib/getContactsList');
 
-async function getAllContacts() {
+const getAllContacts = async () => {
   try {
-    const contacts =await getContactsList();
+    const contacts = await getContactsList();
     return contacts;
   } catch (err) {
     return console.log(err.message);
   }
   };
 
-  module.exports = getAllContacts();
+  module.exports = getAllContacts;

@@ -6,4 +6,4 @@ async function  writeContacts (user) {
   return await fs.writeFile(contactsPath, JSON.stringify(user));
 };
 
-module.exports = writeContacts();
+module.exports = writeContacts;

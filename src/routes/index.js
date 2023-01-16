@@ -1,4 +1,4 @@
-const router = require("./contact");
+const router = require("./api/contacts");
 
 module.exports = {
   router,

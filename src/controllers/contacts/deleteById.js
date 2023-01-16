@@ -19,4 +19,4 @@ const deleteById = router.delete('/:contactId', async (req, res, next) => {
     });
   });
 
-module.exports = deleteById();
+module.exports = deleteById;

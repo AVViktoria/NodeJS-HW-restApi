@@ -1,8 +1,9 @@
-// const express = require('express')
-// const router = express.Router()
+const express = require('express')
+const router = express.Router()
 const { getAllContacts } = require("../../models/contacts/getAllContacts");
 
-const getAll = async (_, res) => {
+
+const getAll = router.get("/", async (req, res, next) => {
   // const {body} = req;
   // const {body} = req.body;
 
@@ -15,8 +16,10 @@ const getAll = async (_, res) => {
   res.status(200).json({
     status: "success",
     code: 200,
-    data,
+    data: {
+      contacts: data,
+    },
   });
-};
+});
 
-module.exports = getAll();
+module.exports = getAll;

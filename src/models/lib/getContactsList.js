@@ -3,8 +3,8 @@ const contactsPath = require('./contactsPath');
 
 
 //   Functions  readFile 
-async function  getContactsList() {
+const getContactsList= async () => {
   return JSON.parse(await fs.readFile(contactsPath, "utf8"));
 };
 
-module.exports = getContactsList();
+module.exports = getContactsList;

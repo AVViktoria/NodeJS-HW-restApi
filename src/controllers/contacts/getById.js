@@ -15,4 +15,4 @@ const getById = router.get("/:contactId", async (req, res, next) => {
   });
 });
 
-module.exports = getById();
+module.exports = getById;

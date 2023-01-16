@@ -20,4 +20,4 @@ const addContact = async (body) => {
   }
   }
 
-  module.exports = addContact();
+  module.exports = addContact;
