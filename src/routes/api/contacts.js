@@ -17,13 +17,15 @@ const {
   addById,
   deleteById,
   updateById,
-} = require("../../controllers/index");
+} = require("../../controllers/contacts");
+// const { contacts } = require('../../controllers/contacts');
 
 router.get('/', getAll);
 router.get('/:contactId', getById);
 router.post('/', addById);
 router.delete('/:contactId', deleteById);
 router.put('/:contactId', updateById);
+
 // router.get('/', async (req, res, next) => {
 //   res.json({ message: 'Get Hello World!' })
 // })

@@ -11,3 +11,7 @@ module.exports = {
   deleteById,
   updateById,
 };
+
+// const contacts = require('./contacts');
+
+// module.exports = { contacts };
