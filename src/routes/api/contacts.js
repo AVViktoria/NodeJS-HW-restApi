@@ -8,6 +8,9 @@ const router = express.Router();
 //* or like that it's same
 // const {Router} =require('express');
 // const router = Router();
+const {joyValidation} = require('../../middleware');
+const {contactSchema} = require ('../../schemas');
+const joyValidate = joyValidation(contactSchema);
 
 
 const {
@@ -20,8 +23,8 @@ const {
 
 router.get('/', getAll);
 router.get('/:contactId', getById);
-router.post('/', addById);
+router.post('/', joyValidate, addById);
 router.delete('/:contactId', deleteById);
-router.put('/:contactId', updateById);
+router.put('/:contactId',joyValidate, updateById);
 
 module.exports = router;
