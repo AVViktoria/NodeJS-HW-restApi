@@ -1,6 +1,6 @@
 // const express = require('express')
 // const router = express.Router()
-const {removeContact} = require('../../models/contacts/removeContact');
+const {removeContact} = require('../../models/index');
 const createError = require('http-errors');
 
 const deleteById = async (req, res) => {

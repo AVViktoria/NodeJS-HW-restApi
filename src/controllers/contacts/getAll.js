@@ -1,6 +1,6 @@
 // const express = require('express')
 // const router = express.Router()
-const { getAllContacts } = require("../../models/contacts/getAllContacts");
+const { getAllContacts } = require("../../models/index");
 
 const getAll = async (req, res) => {
   const contacts = await getAllContacts();

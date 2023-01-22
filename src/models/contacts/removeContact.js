@@ -1,28 +1,22 @@
-const getContactsList = require('./getContactsList');
-const writeContacts = require('./writeContacts');
+const getAllContacts = require("./getAllContacts");
+const contactsPath = require("./contactsPath");
+const fs = require("fs/promises");
 
 const removeContact = async (contactId) => {
   try {
-    const contacts = await getContactsList();
-    const idx = contacts.findIndex((item) => item.id ===contactId);
-    if(idx===-1){
+    const contacts = await getAllContacts();
+    const idx = contacts.findIndex(
+      (item) => String(item.id) === String(contactId)
+    );
+    if (idx === -1) {
       return null;
-    } 
+    }
     const [removeContact] = contacts.splice(idx, 1);
-    await writeContacts(contacts);
+    await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
     return removeContact;
   } catch (err) {
     return console.log(err.message);
   }
-}
-
-// const removeAllContacts = async (res) => {
-//   try {
-//    await writeContacts([]);
-//    res.status(200).json({ message: `All users was removed` });;
-//   } catch (err) {
-//     return console.log(err.message);
-//   }
-// }
+};
 
 module.exports = removeContact;

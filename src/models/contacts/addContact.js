@@ -1,23 +1,25 @@
-const getContactsList = require('./getContactsList');
-const writeContacts = require('./writeContacts');
+const fs = require("fs/promises");
 const { randomUUID } = require("crypto");
 
+const getAllContacts = require("./getAllContacts");
+const contactsPath = require("./contactsPath");
 
-const addContact = async (body) => {
+const addContact = async ({ name, email, phone }) => {
   try {
-    const contacts = await getContactsList();
-  const newContact = {id: randomUUID(), ...body};
+    const contacts = await getAllContacts();
+    const newContact = {
+      id: randomUUID(),
+      name,
+      email,
+      phone,
+    };
+    contacts.push(newContact);
 
-  // пушим новый контакт
-  contacts.push(newContact);
-  
-  // перезаписываем файл
-  await writeContacts(contacts);
-  return newContact;
-  
+    await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
+    return newContact;
   } catch (err) {
     return console.log(err.message);
   }
-  }
+};
 
-  module.exports = addContact;
+module.exports = addContact;

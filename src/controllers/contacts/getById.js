@@ -1,6 +1,6 @@
 // const express = require("express");
 // const router = express.Router();
-const { getContactById } = require("../../models/contacts/getContactById");
+const { getContactById } = require("../../models/index");
 const createError = require('http-errors');
 
 const getById = async (req, res) => {
